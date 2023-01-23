@@ -11,7 +11,11 @@ add_library(${PROJECT_NAME}
         src/tcp_server.cpp
         src/client.cpp
         src/pipe_ret_t.cpp
-        src/common.cpp)
+        src/common.cpp
+        mocks/wrapper_functions.cpp
+)
+
+add_link_options(-Wl,--wrap=_ZN9TcpServer5startEiib)
 
 option(SERVER_EXAMPLE "Build SERVER" ON)
 
