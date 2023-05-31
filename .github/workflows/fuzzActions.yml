@@ -45,5 +45,5 @@ jobs:
             --commit $GITHUB_SHA \
             --branch $GITHUB_REF_NAME \
             --output $GITHUB_WORKSPACE/$CHECKOUT_DIR/$FUZZING_ARTIFACT
-        shell: "bash"
+
           
