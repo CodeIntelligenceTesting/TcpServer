@@ -39,7 +39,7 @@ jobs:
       - id: build-myfuzzers
         name: Build Fuzzers
         run: |
-          export cifuzz_DIR="$D:\fuzztest\TcpServer\.cifuzz-build\logs"
+          export cifuzz_DIR="$D:\fuzztest\TcpServer\cifuzz.yaml"
           cd $CHECKOUT_DIR/
           $GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/bin/cifuzz bundle \
             --commit $GITHUB_SHA \
