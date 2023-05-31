@@ -1,0 +1,6 @@
+<snip>
+  ==1==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x602000d95838 at pc 0x000000523dea bp 0x7fff5cf6f100 sp 0x7fff5cf6e8c8
+  WRITE of size 9 at 0x602000d95838 thread T0
+      #0 0x523de9 in __asan_memcpy (/home/demo/repos/quick-start/c_cpp/cmake/.cifuzz-build/libfuzzer/address+undefined/my_fuzz_test+0x523de9)
+      #1 0x559763 in exploreMe(int, int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) /home/demo/repos/quick-start/c_cpp/cmake/src/explore_me.cpp:14:11
+<snip>
