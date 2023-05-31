@@ -36,5 +36,14 @@ jobs:
           curl --fail --silent --show-error --location -o cifuzz_installer "$CIFUZZ_DOWNLOAD_URL"
           chmod u+x cifuzz_installer
           ./cifuzz_installer --install-dir $CIFUZZ_INSTALL_DIR
-      
+      - id: build-myfuzzers
+        name: Build Fuzzers
+        run: |
+          export cifuzz_DIR="$D:\fuzztest\TcpServer\.cifuzz-build\logs"
+          cd $CHECKOUT_DIR/
+          $GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/bin/cifuzz bundle \
+            --commit $GITHUB_SHA \
+            --branch $GITHUB_REF_NAME \
+            --output $GITHUB_WORKSPACE/$CHECKOUT_DIR/$FUZZING_ARTIFACT
+        shell: "bash"
           
