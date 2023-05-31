@@ -37,9 +37,4 @@ jobs:
           chmod u+x cifuzz_installer
           ./cifuzz_installer --install-dir $CIFUZZ_INSTALL_DIR
 
-      - id: integratormake
-        name: create Integrator
-        run: |
-         cpp -o "$D:\fuzztest\TcpServer\test\my_fuzz_test.cpp"
-      -  
-          
+   
