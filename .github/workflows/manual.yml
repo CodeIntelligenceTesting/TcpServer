@@ -39,7 +39,7 @@ jobs:
       - id: build-fuzzers
         name: Build Fuzzers
         run: |
-          fuzz init
+     
           export cifuzz_DIR="$GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/share/cmake"
           cd $CHECKOUT_DIR/
           $GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/bin/cifuzz bundle \
