@@ -40,7 +40,7 @@ jobs:
       - id: integratormake
         name: create Integrator
         run: |
-         cifuzz integrate cmake
+         cifuzz create cpp -o "$D:\fuzztest\TcpServer\test\my_fuzz_test.cpp"
       - id: build-myfuzzers
         name: Build Fuzzers
         run: |
