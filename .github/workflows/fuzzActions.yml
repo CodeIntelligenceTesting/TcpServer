@@ -36,6 +36,11 @@ jobs:
           curl --fail --silent --show-error --location -o cifuzz_installer "$CIFUZZ_DOWNLOAD_URL"
           chmod u+x cifuzz_installer
           ./cifuzz_installer --install-dir $CIFUZZ_INSTALL_DIR
+
+      - id: integratormake
+        name: create Integrator
+        run: |
+         cifuzz integrate cmake
       - id: build-myfuzzers
         name: Build Fuzzers
         run: |
