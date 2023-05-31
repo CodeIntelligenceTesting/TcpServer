@@ -41,21 +41,5 @@ jobs:
         name: create Integrator
         run: |
          cpp -o "$D:\fuzztest\TcpServer\test\my_fuzz_test.cpp"
-      - id: build-myfuzzers
-        name: Build Fuzzers
-        run: |
-          export cifuzz_DIR="$D:\fuzztest\TcpServer\cifuzz.yaml"
-          cd $CHECKOUT_DIR/
-          $GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/bin/cifuzz bundle \
-            --commit $GITHUB_SHA \
-            --branch $GITHUB_REF_NAME \
-            --output $GITHUB_WORKSPACE/$CHECKOUT_DIR/$FUZZING_ARTIFACT
-      - id: start-fuzzing
-        name: Start Fuzzing
-        uses: CodeIntelligenceTesting/github-actions/start-fuzzing@v5
-        with:
-            ci_fuzz_api_token: ${{ secrets.CI_FUZZ_API_TOKEN }}
-            fuzzing_server_address: ${{ env.FUZZING_SERVER_ADDRESS }}
-            fuzzing_artifact: ${{ env.CHECKOUT_DIR }}/${{ env.FUZZING_ARTIFACT }}
-            checkout_directory: ${{ env.CHECKOUT_DIR }}
+      -  
           
