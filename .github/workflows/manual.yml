@@ -36,10 +36,12 @@ jobs:
           curl --fail --silent --show-error --location -o cifuzz_installer "$CIFUZZ_DOWNLOAD_URL"
           chmod u+x cifuzz_installer
           ./cifuzz_installer --install-dir $CIFUZZ_INSTALL_DIR
+      - id: initialize-fuzzer
+        run: |
+         cifuzz init
       - id: build-fuzzers
         name: Build Fuzzers
         run: |
-     
           export cifuzz_DIR="$GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/share/cmake"
           cd $CHECKOUT_DIR/
           $GITHUB_WORKSPACE/$CIFUZZ_INSTALL_DIR/bin/cifuzz bundle \
