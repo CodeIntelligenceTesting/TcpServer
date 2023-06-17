@@ -42,20 +42,6 @@ void acceptClient() {
 }
 
 
-// observer callback. will be called for every new message received by clients
-// with the requested IP address
-void onIncomingMsg(const std::string &clientIP, const char * msg, size_t size) {
-    std::string msgStr = msg;
-    if (msgStr == "S") {
-        shouldSaveMsg = true;
-    } else if (shouldSaveMsg) {
-        if (strncmp(msgStr.c_str(), "M", 1) == 0) {
-            memcpy(msgBuffer, msg, size);
-        }
-        shouldSaveMsg = false;
-    }
-    // print client message
-    std::cout << "Observer1 got client msg: " << msgStr << "\n";
 
     void onIncomingMsg(const std::string &clientIP, const char * msg, size_t size) {
     std::string msgStr = msg;
@@ -76,7 +62,7 @@ void onIncomingMsg(const std::string &clientIP, const char * msg, size_t size) {
         std::cout << "Zacarias has injected a file heree: " << msgStr << "\n";
         // Example: server.handleInjectedHeader(injectedHeaderValue);
     }
-}
+
 
 }
 
