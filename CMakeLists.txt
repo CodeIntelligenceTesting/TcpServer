@@ -1,11 +1,12 @@
 cmake_minimum_required(VERSION 3.8.1)
-project(tcp_client_server)
+project(TcpServer)
+
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11")
 
-enable_testing()
 find_package(cifuzz)
+enable_fuzz_testing()
 
 set(SOURCES
     src/tcp_client.cpp
@@ -15,7 +16,12 @@ set(SOURCES
     src/common.cpp
 )
 
-add_library(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME}
+        src/tcp_client.cpp
+        src/tcp_server.cpp
+        src/client.cpp
+        src/pipe_ret_t.cpp
+        src/common.cpp)
 
 option(SERVER_EXAMPLE "Build SERVER" ON)
 
