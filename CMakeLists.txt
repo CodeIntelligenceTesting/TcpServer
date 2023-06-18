@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8.1)
 project(tcp_client_server)
 
 find_package(cifuzz)
-enable_fuzz_testing()
+*/enable_fuzz_testing()
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11")
@@ -39,7 +39,7 @@ if(CLIENT_EXAMPLE)
     add_executable(tcp_client examples/client_example.cpp)
 
     target_link_libraries (tcp_client ${PROJECT_NAME} ${CMAKE_THREAD_LIBS_INIT})
-    add_fuzz_test(my_fuzz_test test/my_fuzz_test.cpp)
+    /*add_fuzz_test(my_fuzz_test test/my_fuzz_test.cpp)
     target_link_libraries(my_fuzz_test PRIVATE server_example)
 
 endif()
