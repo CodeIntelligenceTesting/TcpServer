@@ -43,6 +43,6 @@ if(CLIENT_EXAMPLE)
 
     target_link_libraries (tcp_client ${tcp_server} ${CMAKE_THREAD_LIBS_INIT})
      
-    target_link_libraries(my_fuzz_test PRIVATE server_example)
+ 
 
 endif()
