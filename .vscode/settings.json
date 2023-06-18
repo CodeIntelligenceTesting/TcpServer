@@ -5,5 +5,8 @@
         "chrono": "cpp",
         "system_error": "cpp",
         "xlocale": "cpp"
-    }
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
 }
