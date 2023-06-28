@@ -1,0 +1,15 @@
+{
+    "cmake.configureOnOpen": true,
+    "files.associations": {
+        "*.py": "python",
+        "*.txt": "plaintext",
+        "*.yml": "cpp",
+        "chrono": "cpp",
+        "system_error": "cpp",
+        "xlocale": "cpp",
+        "typeinfo": "cpp"
+    },
+    "githubPullRequests.ignoredPullRequestBranches": [
+        "main"
+    ]
+}
